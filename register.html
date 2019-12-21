@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register</title>
+</head>
+<body>
+    <form action="register.php" class="" method="POST" onsubmit="Validate()" name="sak"> 
+        <input type="text" name="username" placeholder="username">
+        <input type="text" name="PhoneNumber" placeholder="PhoneNumber">
+        <input type="text" name="email" placeholder="Email Id">
+        <input type="text" name="password" placeholder="Password">
+        <input type="submit">
+    
+    </form>
+</body>
+<script type="text/javascript">
+    function Validate() {
+        var regex = /^[a-zA-Z\s]+$/;
+        if(regex.test(document.sak.Name.value)==false)
+        {
+            alert("Please enter your name!");
+            document.sak.Name.focus();
+        }
+         var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+         if(regex.test(document.sak.PhoneNumber.value)==false){
+            alert("Please enter your phone number");
+            document.sak.PhoneNumber.focus(); 
+         }
+        var regex = /^\S+@\S+\.\S+$/;
+        if (regex.test(document.sak.email.value) == false) {
+            alert("Please provide valid email !");
+            document.sak.email.focus();
+        }
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/;
+        if (regex.test(document.sak.password.value) == false) {
+            alert("please enter valid passwors of minimum 8 characters with uppercase , lowercase , number and special characters !");
+            document.sak.password.focus();
+
+        }
+
+    }
+
+
+
+</script>
+</html>
